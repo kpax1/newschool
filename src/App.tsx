@@ -1,4 +1,4 @@
-import { useRef, useState } from "react";
+import { useEffect, useRef, useState } from "react";
 import { Divide as Hamburger } from "hamburger-react";
 import { motion } from "framer-motion";
 
@@ -11,6 +11,8 @@ function App() {
   const [isOpen, setOpen] = useState(false);
   const myDivRef = useRef<HTMLDivElement>(null);
 
+  const videoRef= useRef<any>(null)
+
   const handleClick = () => {
     if (myDivRef.current) {
       myDivRef.current.scrollIntoView({ behavior: "smooth" });
@@ -18,6 +20,16 @@ function App() {
 
     setOpen(false);
   };
+
+
+
+
+useEffect(()=>{
+  const handlePlayVideo = () => {
+    videoRef.current.play();
+  }
+  handlePlayVideo();
+},[])
 
   const container = {
     hidden: { opacity: 1, scale: 0 },
@@ -73,7 +85,7 @@ function App() {
         </Menu>
       )}
 
-      <video src={video} autoPlay loop muted />
+      <video ref={videoRef}src={video} autoPlay loop muted />
       <div className="bg-overley"> </div>
 
       <motion.div
