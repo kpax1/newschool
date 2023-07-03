@@ -85,7 +85,7 @@ useEffect(()=>{
         </Menu>
       )}
 
-      <video ref={videoRef}src={video} autoPlay loop muted />
+      <video className="video" src={video} autoPlay loop muted />
       <div className="bg-overley"> </div>
 
       <motion.div
@@ -246,6 +246,8 @@ Don’t miss out, take your DJing to the next level. Contact us to book your ses
         </motion.p>
       </div>
       
+      <video  className='bvideo' src={video} ref={videoRef} muted/>
+
     </Wrapper>
   );
 }
