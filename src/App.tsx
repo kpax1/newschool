@@ -1,7 +1,6 @@
 import { useRef, useState } from "react";
 import { Divide as Hamburger } from "hamburger-react";
 import { motion } from "framer-motion";
-import soundimg from '/sound.png'
 import styled from "styled-components";
 import video from "/video.mp4";
 
