@@ -246,3 +246,27 @@ img{
   width: 90%;
   height: 100%;
 }
+
+.buttons{
+  width: 100%;
+  display: flex;
+  justify-content: center;
+  gap: 10px;
+}
+
+
+.bookstudio{
+  background: radial-gradient(circle at -20% 51.2%, rgb(193, 214, 190) 0%, rgba(97, 207, 53, 0.626) 15.9%, rgb(34, 205, 34) 15.9%, rgb(4, 131, 15) 24.4%, rgb(19, 30, 37) 24.5%, rgb(93, 186, 12) 66%);  width: 50%;
+  border: none;
+  height: 100px;
+  border-radius: 8px;
+  font-weight: 400;
+  font-size: 1.5em;
+
+}
+.bookequipment{
+  background-color: red;
+  width: 50%;
+  border: none;
+
+}

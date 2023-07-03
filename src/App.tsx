@@ -95,7 +95,7 @@ function App() {
           whileInView={{ opacity: 1, transform: "scale(1)" }}
         >
           <div className="ordersection">
-            <h1> rent a studio</h1>
+            <h1>Our Services</h1>
             <p>develop yourself</p>
           </div>
 
@@ -104,14 +104,33 @@ function App() {
             newSchool
           </motion.p>
 
-          <motion.p
-            className="calltext"
-            initial={{ opacity: 0 }}
-            whileInView={{ opacity: 100, x: -100, transform: "scale(1)" }}
-          >
-            for rent call us:
-          </motion.p>
-          <motion.button
+
+
+
+          <div className='buttons'>
+        <motion.button
+          className="bookstudio"
+          
+        >
+          book studio
+        </motion.button>
+
+        <motion.button
+          className="bookequipment"
+          
+        >
+          rent equipment
+        </motion.button>
+
+
+
+
+
+        
+          </div>
+
+        
+                    <motion.button
             className="call"
             onClick={() => window.open("tel:+995511332212")}
             initial={{ y: 100, opacity: 0.1 }}
