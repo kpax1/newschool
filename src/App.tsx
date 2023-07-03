@@ -3,7 +3,7 @@ import { Divide as Hamburger } from "hamburger-react";
 import { motion } from "framer-motion";
 
 import styled from "styled-components";
-import video from '/video.mp4';
+import video from "/video.mp4";
 
 const imgArray = ["/1.jpg", "/2.jpg", "/3.jpg", "/4.jpg", "/5.jpg", "/6.jpg"];
 
@@ -11,7 +11,7 @@ function App() {
   const [isOpen, setOpen] = useState(false);
   const myDivRef = useRef<HTMLDivElement>(null);
 
-  const videoRef= useRef<any>(null)
+  const videoRef = useRef<any>(null);
 
   const handleClick = () => {
     if (myDivRef.current) {
@@ -21,15 +21,13 @@ function App() {
     setOpen(false);
   };
 
-
-
-
-useEffect(()=>{
   const handlePlayVideo = () => {
-    videoRef.current.play();
-  }
-  handlePlayVideo();
-},[])
+    videoRef.current.play()
+  };
+
+  useEffect(() => {
+       handlePlayVideo();
+  }, []);
 
   const container = {
     hidden: { opacity: 1, scale: 0 },
@@ -55,7 +53,7 @@ useEffect(()=>{
       <Header>
         <div>
           <a href="/" className="logo">
-          𝔫𝔴𝔰𝔠
+            𝔫𝔴𝔰𝔠
           </a>
         </div>
 
@@ -80,12 +78,10 @@ useEffect(()=>{
           </div>
           <div className="menuitem">Book </div>
           <div className="menuitem wow">გალერია</div>
-
-        
         </Menu>
       )}
 
-      <video className="video" src={video} autoPlay loop muted />
+      <video className="video" src={video} autoPlay loop muted playsInline />
       <div className="bg-overley"> </div>
 
       <motion.div
@@ -99,11 +95,8 @@ useEffect(()=>{
         </button>
       </motion.div>
 
-      
-
       <Content ref={myDivRef}>
-        
-      <motion.div
+        <motion.div
           className="content"
           initial={{ opacity: 0 }}
           whileInView={{ opacity: 1, transform: "scale(1)" }}
@@ -114,8 +107,8 @@ useEffect(()=>{
           </div>
 
           <motion.p className="text" variants={item}>
-            
-            Don't miss out, `take your djing to the next level keep in minde newSchool
+            Don't miss out, `take your djing to the next level keep in minde
+            newSchool
           </motion.p>
 
           <motion.p
@@ -140,8 +133,7 @@ useEffect(()=>{
             whileInView={{ y: 0, opacity: 1 }}
           >
             <a href="https://calendar.google.com/calendar/u/0/embed?src=nwscrecords@gmail.com&ctz=Asia/Tbilisi&fbclid=IwAR2jCSWxhaQq0W0aqAftsvmFCuKrt67f8XCU7pweM4zemCMn2MsgpfsK-Kw">
-            Book Online
-
+              Book Online
             </a>
           </motion.button>
 
@@ -154,14 +146,10 @@ useEffect(()=>{
             about us
           </motion.button>
         </motion.div>
-
-        
       </Content>
 
-
-      <div 
-      className="info">
-      <motion.div
+      <div className="info">
+        <motion.div
           className="content"
           initial={{ opacity: 0 }}
           whileInView={{ opacity: 1, transform: "scale(1)" }}
@@ -170,26 +158,21 @@ useEffect(()=>{
             <h1> about us</h1>
           </div>
 
-          
-            <div className="inform">
-            Attention all DJs in Tbilisi! Are you tired of practicing your sets at home, or struggling to find a suitable place to record your tracks? Look no further than “Newschool”, the newest and most state of the art DJ studio in town!
-            Our studio is fully equipped with the latest gear 
-            including the top of the line
-            CdJ 3000 & 2000 NXS2 x2
-
-            as well as the industry standard 
-            mixer Xone92 & Xone 96. 
-            
-            We also have a powerful sound system
-            KRK Rokit8 & Yamaha HS8 speakers to ensure your mixes sound crystal clear.
-Newschool is now available for rental, whether you’re a seasoned pro or just starting out in the world of DJing. Use our space to record your next mix, practice your sets before a big gig, or even host a listening party for your friends.
-Don’t miss out, take your DJing to the next level. Contact us to book your session at Newschool.
-            </div>
-
-          
-         
-
-         
+          <div className="inform">
+            Attention all DJs in Tbilisi! Are you tired of practicing your sets
+            at home, or struggling to find a suitable place to record your
+            tracks? Look no further than “Newschool”, the newest and most state
+            of the art DJ studio in town! Our studio is fully equipped with the
+            latest gear including the top of the line CdJ 3000 & 2000 NXS2 x2 as
+            well as the industry standard mixer Xone92 & Xone 96. We also have a
+            powerful sound system KRK Rokit8 & Yamaha HS8 speakers to ensure
+            your mixes sound crystal clear. Newschool is now available for
+            rental, whether you’re a seasoned pro or just starting out in the
+            world of DJing. Use our space to record your next mix, practice your
+            sets before a big gig, or even host a listening party for your
+            friends. Don’t miss out, take your DJing to the next level. Contact
+            us to book your session at Newschool.
+          </div>
         </motion.div>
       </div>
 
@@ -203,7 +186,6 @@ Don’t miss out, take your DJing to the next level. Contact us to book your ses
           Book now
         </button>
       </motion.div>
-      
 
       <div className="zina">
         <motion.p
@@ -238,16 +220,22 @@ Don’t miss out, take your DJing to the next level. Contact us to book your ses
           initial={{ x: -100, opacity: 0 }}
           whileInView={{ x: 0, opacity: 1 }}
         >
-          ALL RIGHT RESERVED 
-          <p className='bottomtext'>
-          © 2023 for
-          <span className="logonottom"> NWSChool</span>
+          ALL RIGHT RESERVED
+          <p className="bottomtext">
+            © 2023 for
+            <span className="logonottom"> NWSChool</span>
           </p>
         </motion.p>
       </div>
-      
-      <video  className='bvideo' src={video} ref={videoRef} muted/>
 
+      <video
+        className="bvideo"
+        src={video}
+        ref={videoRef}
+        playsInline
+        muted
+        autoPlay
+      />
     </Wrapper>
   );
 }
@@ -275,7 +263,7 @@ const Header = styled.div`
   padding-right: 20px;
   border-bottom: 0.5px solid #ffffff4c;
   font-family: "Cookie", cursive;
-  font-size:2em;
+  font-size: 2em;
   z-index: 3;
 `;
 
@@ -300,4 +288,3 @@ const Content = styled.div`
   align-items: center;
   justify-content: center;
 `;
-
