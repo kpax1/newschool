@@ -1,4 +1,4 @@
-import { useEffect, useRef, useState } from "react";
+import {useRef, useState } from "react";
 import { Divide as Hamburger } from "hamburger-react";
 import { motion } from "framer-motion";
 
@@ -11,7 +11,6 @@ function App() {
   const [isOpen, setOpen] = useState(false);
   const myDivRef = useRef<HTMLDivElement>(null);
 
-  const videoRef = useRef<any>(null);
 
   const handleClick = () => {
     if (myDivRef.current) {
