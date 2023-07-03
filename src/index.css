@@ -59,7 +59,10 @@ h1{
   margin-top: 30px;
   font-weight: 700;
   font-size: 20px;
-  letter-spacing: 10px;
+  letter-spacing: 8px;
+  font-weight: 300;
+  font-family: 'Orbitron', sans-serif;  border-radius: 8px;
+
 }
 
 .gallery{
@@ -128,7 +131,7 @@ a{
   padding: 15px;
   font-family: 'Rubik', sans-serif;
   background-repeat: no-repeat;
-  background-position: top right;
+  background-position: top left;
 }
 
 
@@ -235,9 +238,6 @@ img{
   display: flex;
   justify-content: center;
   width: 100%;
-  height: 100vh;
-
-  
 }
 
 
@@ -248,8 +248,7 @@ img{
   display: flex;
   line-height: 1.4em;
   font-family: 'Rubik', sans-serif;
-
-
+  border-radius: 8px;
 }
 
 
@@ -268,7 +267,7 @@ img{
 
 
 .bookstudio{
-  background: radial-gradient(circle at -10% 51.2%, rgb(51, 255, 0) 0%, rgba(240, 231, 239, 0.626) 15.9%, rgb(172, 55, 157) 15.9%, rgb(160, 196, 163) 24.4%, rgb(19, 30, 37) 24.5%, rgba(108, 226, 12, 0.705) 66%);  width: 50%;
+  background: radial-gradient(circle at -10% 51.2%, rgb(51, 255, 0) 0%, rgba(106, 166, 88, 0.626) 15.9%, rgb(0, 0, 0) 15.9%, rgb(58, 65, 58) 24.4%, rgb(19, 30, 37) 24.5%, rgba(108, 226, 12, 0.705) 66%);  width: 50%;
   border: none;
   height: 100px;
   border-radius: 8px;

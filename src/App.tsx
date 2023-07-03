@@ -60,29 +60,20 @@ function App() {
       {isOpen && (
         <Menu>
           <div className="menuitem" onClick={handleClick}>
-            ჩვენს შესახებ
+            about us
           </div>
           <div className="menuitem" onClick={handleClick}>
-            კონტაქტი
+            contact
           </div>
           <div className="menuitem">Book </div>
-          <div className="menuitem wow">გალერია</div>
+          <div className="menuitem wow">gallery</div>
         </Menu>
       )}
 
       <video className="video" src={video} autoPlay loop muted playsInline />
       <div className="bg-overley"> </div>
 
-      <motion.div
-        className="o"
-        initial={{ opacity: 0.5 }}
-        animate={{ opacity: 1, transform: "scale(1)" }}
-        transition={{ type: "spring" }}
-      >
-        <button className="order" onClick={handleClick}>
-          Book now
-        </button>
-      </motion.div>
+   
 
       <Content ref={myDivRef}>
         <motion.div
@@ -124,7 +115,7 @@ function App() {
 
       <div className="info">
         <motion.div
-          className="content"
+          className="s"
           initial={{ opacity: 0 }}
           whileInView={{ opacity: 1, transform: "scale(1)" }}
         >
@@ -157,8 +148,8 @@ function App() {
         transition={{ type: "spring" }}
       >
         <button className="order" onClick={handleClick}>
-          Book now
-        </button>
+          Services
+          </button>
       </motion.div>
 
       <div className="zina">
@@ -242,6 +233,8 @@ const Menu = styled.div`
   display: flex;
   flex-direction: column;
   z-index: 100;
+  font-family: 'Orbitron', sans-serif;  border-radius: 8px;
+
 `;
 
 const Content = styled.div`
