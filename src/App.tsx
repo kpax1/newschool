@@ -21,13 +21,7 @@ function App() {
     setOpen(false);
   };
 
-  const handlePlayVideo = () => {
-    videoRef.current.play()
-  };
 
-  useEffect(() => {
-       handlePlayVideo();
-  }, []);
 
   const container = {
     hidden: { opacity: 1, scale: 0 },
@@ -228,14 +222,7 @@ function App() {
         </motion.p>
       </div>
 
-      <video
-        className="bvideo"
-        src={video}
-        ref={videoRef}
-        playsInline
-        muted
-        autoPlay
-      />
+    
     </Wrapper>
   );
 }
