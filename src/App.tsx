@@ -1,7 +1,7 @@
-import {useRef, useState } from "react";
+import { useRef, useState } from "react";
 import { Divide as Hamburger } from "hamburger-react";
 import { motion } from "framer-motion";
-
+import soundimg from '/sound.png'
 import styled from "styled-components";
 import video from "/video.mp4";
 
@@ -11,7 +11,6 @@ function App() {
   const [isOpen, setOpen] = useState(false);
   const myDivRef = useRef<HTMLDivElement>(null);
 
-
   const handleClick = () => {
     if (myDivRef.current) {
       myDivRef.current.scrollIntoView({ behavior: "smooth" });
@@ -19,8 +18,6 @@ function App() {
 
     setOpen(false);
   };
-
-
 
   const container = {
     hidden: { opacity: 1, scale: 0 },
@@ -100,70 +97,29 @@ function App() {
           </div>
 
           <motion.p className="text" variants={item}>
-            Don't miss out, `take your djing to the next level keep in minde
-            newSchool
+            Don't miss out, take your DJing to the next level keep in minde newSchool
           </motion.p>
 
+          <div className="buttons">
+            <motion.button className="bookstudio">
+              <div>
+                <p>Rent a</p>
+                <p>studio</p>
+              </div>
+            </motion.button>
 
+            <motion.button className="bookequipment">
+              <div className='equipmenttext'>
+                <p>Rent</p>
+                <p>equipment</p>
+              </div>
+            </motion.button>
 
-
-          <div className='buttons'>
-        <motion.button
-          className="bookstudio"
-          
-        >
-          <div>
-            <p>Rent</p>
-            <p>studio</p>
-          </div>
-
-        </motion.button>
-
-        <motion.button
-          className="bookequipment"
-          
-        >
-           <div>
-            <p>Rent</p>
-            <p>equipment</p>
-          </div>
-        </motion.button>
-
-
-
-
-
-        
+           
           </div>
 
         
-                    <motion.button
-            className="call"
-            onClick={() => window.open("tel:+995511332212")}
-            initial={{ y: 100, opacity: 0.1 }}
-            whileInView={{ y: 0, opacity: 1 }}
-          >
-            call
-          </motion.button>
-
-          <motion.button
-            className="call"
-            initial={{ y: 100, opacity: 0.1 }}
-            whileInView={{ y: 0, opacity: 1 }}
-          >
-            <a href="https://calendar.google.com/calendar/u/0/embed?src=nwscrecords@gmail.com&ctz=Asia/Tbilisi&fbclid=IwAR2jCSWxhaQq0W0aqAftsvmFCuKrt67f8XCU7pweM4zemCMn2MsgpfsK-Kw">
-              Book Online
-            </a>
-          </motion.button>
-
-          <motion.button
-            className="call"
-            onClick={() => window.open("tel:+995511332212")}
-            initial={{ y: 100, opacity: 0.1 }}
-            whileInView={{ y: 0, opacity: 1 }}
-          >
-            about us
-          </motion.button>
+      
         </motion.div>
       </Content>
 
@@ -246,8 +202,6 @@ function App() {
           </p>
         </motion.p>
       </div>
-
-    
     </Wrapper>
   );
 }
