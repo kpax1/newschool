@@ -112,14 +112,21 @@ function App() {
           className="bookstudio"
           
         >
-          book studio
+          <div>
+            <p>Rent</p>
+            <p>studio</p>
+          </div>
+
         </motion.button>
 
         <motion.button
           className="bookequipment"
           
         >
-          rent equipment
+           <div>
+            <p>Rent</p>
+            <p>equipment</p>
+          </div>
         </motion.button>
 
 
