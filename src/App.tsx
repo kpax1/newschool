@@ -1,14 +1,19 @@
 import { useRef, useState } from "react";
-import { Divide as Hamburger } from "hamburger-react";
 import { motion } from "framer-motion";
 import styled from "styled-components";
 import video from "/video.mp4";
+import Head from './Header'
+import RightMenu from "./Menu";
+import Services from "./Services";
 
 const imgArray = ["/1.jpg", "/2.jpg", "/3.jpg", "/4.jpg", "/5.jpg", "/6.jpg"];
 
 function App() {
-  const [isOpen, setOpen] = useState(false);
+  const [isOpen, setOpen] = useState<any>(false);
   const myDivRef = useRef<HTMLDivElement>(null);
+  const [services, setServices] = useState<number>(0);
+
+
 
   const handleClick = () => {
     if (myDivRef.current) {
@@ -39,35 +44,10 @@ function App() {
   };
   return (
     <Wrapper>
-      <Header>
-        <div>
-          <a href="/" className="logo">
-            𝔫𝔴𝔰𝔠
-          </a>
-        </div>
-
-        <div className="menuicon">
-          <Hamburger
-            toggled={isOpen}
-            toggle={setOpen}
-            color="#ffffff"
-            easing="ease-in"
-            hideOutline={true}
-            size={28}
-          />
-        </div>
-      </Header>
+      <Head isOpen={isOpen} setOpen={setOpen}/>
+      
       {isOpen && (
-        <Menu>
-          <div className="menuitem" onClick={handleClick}>
-            about us
-          </div>
-          <div className="menuitem" onClick={handleClick}>
-            contact
-          </div>
-          <div className="menuitem">Book </div>
-          <div className="menuitem wow">gallery</div>
-        </Menu>
+        <RightMenu  handleClick={handleClick}/>
       )}
 
       <video className="video" src={video} autoPlay loop muted playsInline />
@@ -76,41 +56,11 @@ function App() {
    
 
       <Content ref={myDivRef}>
-        <motion.div
-          className="content"
-          initial={{ opacity: 0 }}
-          whileInView={{ opacity: 1, transform: "scale(1)" }}
-        >
-          <div className="ordersection">
-            <h1>Our Services</h1>
-            <p>develop yourself</p>
-          </div>
 
-          <motion.p className="text" variants={item}>
-            Don't miss out, take your DJing to the next level keep in minde newSchool
-          </motion.p>
-
-          <div className="buttons">
-            <motion.button className="bookstudio">
-              <div>
-                <p>Rent a</p>
-                <p>studio</p>
-              </div>
-            </motion.button>
-
-            <motion.button className="bookequipment">
-              <div className='equipmenttext'>
-                <p>Rent</p>
-                <p>equipment</p>
-              </div>
-            </motion.button>
-
-           
-          </div>
-
+       <Services services={services} setServices={setServices}/>
+        
         
       
-        </motion.div>
       </Content>
 
       <div className="info">
@@ -175,7 +125,7 @@ function App() {
           >
             {imgArray.map((pic) => (
               <motion.div key={pic} className="item" variants={item}>
-                <img src={pic} alt="" />
+                <img  src={pic} alt="" className='galleryiimg'/>
               </motion.div>
             ))}
           </motion.div>
@@ -205,37 +155,8 @@ const Wrapper = styled.div`
   transition: 0.5s;
 `;
 
-const Header = styled.div`
-  background-color: #ffffff10;
-  position: absolute;
-  width: 100%;
-  height: 50px;
-  top: 0;
-  left: 0;
-  display: flex;
-  justify-content: space-between;
-  align-items: center;
-  padding-left: 20px;
-  padding-right: 20px;
-  border-bottom: 0.5px solid #ffffff4c;
-  font-family: "Cookie", cursive;
-  font-size: 2em;
-  z-index: 3;
-`;
 
-const Menu = styled.div`
-  background-color: #cecece16;
-  position: absolute;
-  top: 50px;
-  height: 92%;
-  width: 50%;
-  right: 0;
-  display: flex;
-  flex-direction: column;
-  z-index: 100;
-  font-family: 'Orbitron', sans-serif;  border-radius: 8px;
 
-`;
 
 const Content = styled.div`
   background-color: #000000f3;

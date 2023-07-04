@@ -187,7 +187,7 @@ a{
   width: 220px;
 }
 
-img{
+.galleryiimg{
   width: 99%;
   height: 99%;
   border-radius: 10px;
@@ -287,6 +287,11 @@ img{
 .equipmenttext{
   margin-right: 1.3em;
   
+}
+
+.back{
+  width: 32px;
+  height: 32px;
 }
 
 
