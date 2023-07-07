@@ -1,10 +1,12 @@
-import { useRef, useState } from "react";
+import { useEffect, useRef, useState } from "react";
 import { motion } from "framer-motion";
 import styled from "styled-components";
 import video from "/video.mp4";
 import Head from './Header'
 import RightMenu from "./Menu";
 import Services from "./Services";
+import CircleLoader from "react-spinners/CircleLoader";
+
 
 const imgArray = ["/1.jpg", "/2.jpg", "/3.jpg", "/4.jpg", "/5.jpg", "/6.jpg"];
 
@@ -12,7 +14,16 @@ function App() {
   const [isOpen, setOpen] = useState<any>(false);
   const myDivRef = useRef<HTMLDivElement>(null);
   const [services, setServices] = useState<number>(0);
+  const [loading, setLoading] = useState(true);
 
+  useEffect(()=>{
+    const timeoutID = setTimeout(()=> {
+    setLoading(false)},900);
+
+    return()=>{
+      clearTimeout(timeoutID)
+    }
+  },[])
 
 
   const handleClick = () => {
@@ -50,8 +61,32 @@ function App() {
         <RightMenu  handleClick={handleClick}/>
       )}
 
-      <video className="video" src={video} autoPlay loop muted playsInline />
+
+
+        {loading ?
+        <div className="load">
+        <CircleLoader
+        color='silver'
+        loading={loading}
+       
+    
+
+        size={50}
+        aria-label="Loading Spinner"
+        data-testid="loader"
+      /> 
+      </div>
+      :
+
+ (    
+  <>
+  <video className="video" src={video} autoPlay loop muted playsInline />
       <div className="bg-overley"> </div>
+      </>
+ )
+        }
+        
+    
 
    
 
@@ -103,14 +138,14 @@ function App() {
       </motion.div>
 
       <div className="zina">
-        <motion.p
+        <motion.div
           className="gallery"
           initial={{ y: 30, opacity: 0 }}
           whileInView={{ y: 0, opacity: 1 }}
           transition={{ type: "spring" }}
         >
           Gallery
-        </motion.p>
+        </motion.div>
         <motion.div
           className="ziniko"
           initial={{ x: -50, opacity: 0 }}
@@ -130,7 +165,7 @@ function App() {
             ))}
           </motion.div>
         </motion.div>
-        <motion.p
+        <motion.div
           className="p"
           initial={{ x: -100, opacity: 0 }}
           whileInView={{ x: 0, opacity: 1 }}
@@ -140,7 +175,7 @@ function App() {
             © 2023 for
             <span className="logonottom"> NWSChool</span>
           </p>
-        </motion.p>
+        </motion.div>
       </div>
     </Wrapper>
   );

@@ -29,10 +29,10 @@ export default function Services({ services, setServices }: any) {
 
 
 
-      <motion.p className="text" variants={item}>
+      <motion.div className="text" variants={item}>
         Don't miss out, take your DJing to the next level keep in minde
         newSchool
-      </motion.p>
+      </motion.div>
 
       {services === 0 && (
         <div className="buttons">
