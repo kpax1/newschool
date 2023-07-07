@@ -18,7 +18,7 @@ function App() {
 
   useEffect(()=>{
     const timeoutID = setTimeout(()=> {
-    setLoading(false)},900);
+    setLoading(false)},9000);
 
     return()=>{
       clearTimeout(timeoutID)
