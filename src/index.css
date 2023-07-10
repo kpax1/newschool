@@ -109,8 +109,10 @@ a{
 }
 
 .content{
+  margin-top: 1em;
+  margin-bottom: 1em;
   width: 90%;
-  height: 90%;
+  min-height: 95vh;
   background-color: rgba(255, 255, 255, 0.043);
   border-radius: 8px;
   border: 1px solid #fefefe85;
@@ -302,3 +304,8 @@ a{
   justify-content: center;
   align-items: center;
 }
+
+
+
+
+

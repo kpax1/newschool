@@ -1,6 +1,7 @@
 import { motion, Variants } from "framer-motion";
 
 import back from '/prev.png'
+import Rent from "./rent";
 export const item: Variants = {
   hidden: { opacity: 0 },
   visible: { opacity: 1, transform: "scale(1)" },
@@ -87,7 +88,9 @@ export default function Services({ services, setServices }: any) {
         </>
       )}
 
-      {services === 2 && <div>aoaooo</div>}
+      {services === 2 && 
+      <Rent/>
+      }
     </motion.div>
   );
 }

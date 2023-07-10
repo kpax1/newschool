@@ -195,8 +195,8 @@ const Wrapper = styled.div`
 
 const Content = styled.div`
   background-color: #000000f3;
-  width: 100%;
-  height: 100vh;
+  min-width: 100%;
+  min-height: 100vh;
   display: flex;
   flex-direction: column;
   align-items: center;
