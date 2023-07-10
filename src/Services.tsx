@@ -8,7 +8,6 @@ export const item: Variants = {
 };
 
 export default function Services({ services, setServices }: any) {
-  console.log(services);
   return (
     <motion.div
       className="content"
@@ -89,7 +88,8 @@ export default function Services({ services, setServices }: any) {
       )}
 
       {services === 2 && 
-      <Rent/>
+              <Rent/>
+
       }
     </motion.div>
   );

@@ -15,12 +15,13 @@ import { styled } from "styled-components";
 export default function Rent() {
   return (
     <RentSector>     
+      motion.div
 
 
         
          <RentItem>
         <img src={cdj} alt="" />
-        <h1>CDJ-2000</h1>
+        <h1>CDJ-2000 (nxs2)</h1>
       </RentItem>
       <RentItem>
         <img src={cd2} alt="" />
@@ -34,7 +35,7 @@ export default function Rent() {
       <RentItem>
         <img src={xone92} alt="" />
         <div>
-        <h1>Xone-92 (large)</h1>
+        <h1>Xone-92</h1>
 
         </div>
 
@@ -49,9 +50,6 @@ export default function Rent() {
 
       </RentItem>
 
-
-
-      //////
 
 
       <RentItem>
@@ -71,7 +69,7 @@ export default function Rent() {
       <RentItem>
         <img src={krk} alt="" />
         <div>
-        <h1>Krk-96</h1>
+        <h1>Krk rokit 8</h1>
 
         </div>
 
@@ -81,7 +79,7 @@ export default function Rent() {
       <RentItem>
         <img src={dinamicsome} alt="" />
         <div>
-        <h1>Yamaha</h1>
+        <h1>Yamaha hs8</h1>
 
         </div>
 

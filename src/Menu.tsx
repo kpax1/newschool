@@ -1,22 +1,26 @@
+import { RefObject } from 'react';
 import { styled } from 'styled-components';
 
-interface clicktype {
-    handleClick: () => void
+interface RightMenuProps {
+  handleClick: (ref: RefObject<HTMLDivElement>) => void;
+  myDivRef:  RefObject<HTMLDivElement>;
+  aboutRef:  RefObject<HTMLDivElement>;
+  galleryRef: RefObject<HTMLDivElement>;
 }
 
-export default function RightMenu({handleClick}:clicktype) {
+export default function RightMenu({handleClick, myDivRef,aboutRef,galleryRef}:RightMenuProps) {
   return (
     <>
         
         <Menu>
-          <div className="menuitem" onClick={handleClick}>
+          <div className="menuitem" onClick={()=>handleClick(aboutRef)}>
             about us
           </div>
-          <div className="menuitem" onClick={handleClick}>
+          <div className="menuitem" onClick={()=>handleClick(myDivRef)}>
             contact
           </div>
-          <div className="menuitem">Book </div>
-          <div className="menuitem wow">gallery</div>
+          <div className="menuitem" onClick={()=>handleClick(myDivRef)}>Book </div>
+          <div className="menuitem wow" onClick={()=>handleClick(galleryRef)}>gallery</div>
         </Menu>
       
     </>

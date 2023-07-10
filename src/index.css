@@ -69,6 +69,7 @@ h1{
   font-family: 'Righteous', cursive;
   font-size: 2.2em;
   margin: 10px;
+  background-color: red;
 }
 
 #sidebar{
@@ -85,9 +86,7 @@ a{
   padding-top: 10px;
 }
 
-.zina{
-  background-color: red;
-}
+
 
 .logo{
   font-size: 2.2rem;
@@ -304,6 +303,7 @@ a{
   justify-content: center;
   align-items: center;
 }
+
 
 
 
