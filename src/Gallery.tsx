@@ -60,7 +60,7 @@ export default function Gallery({galleryRef, imgArray}:any) {
         ALL RIGHT RESERVED
         <p className="bottomtext">
           © 2023 for
-          <span className="logonottom"> NWSChool</span>
+          <span className="logonottom"> NEWSCHOOL</span>
         </p>
       </motion.div>
     </div>

@@ -1,7 +1,7 @@
 import { motion, Variants } from "framer-motion";
 
-import back from '/prev.png'
-import Rent from "./rent";
+import back from "/prev.png";
+import Rent from "./Rent";
 export const item: Variants = {
   hidden: { opacity: 0 },
   visible: { opacity: 1, transform: "scale(1)" },
@@ -16,45 +16,69 @@ export default function Services({ services, setServices }: any) {
     >
       <div className="ordersection">
         {services === 0 && <h1>Our Services</h1>}
-        {services === 1 && (<h1>Rent a studio</h1> )}
+        {services === 1 && <h1>Rent a studio</h1>}
         {services === 2 && <h1>Rent equipment</h1>}
         <p>develop yourself</p>
-        {(services === 1 || services===2)  && (
-            <img src={back} className="back" alt="" 
-            onClick={()=>setServices(0)}
-            />
+        {(services === 1 || services === 2) && (
+          <img
+            src={back}
+            className="back"
+            alt=""
+            onClick={() => setServices(0)}
+          />
+        )}
+      </div>
+      <motion.p className="text" variants={item}>
+        {services === 0 && (
+          <>
+            <span className="firsword">Newschool</span> is now available for
+            rental, whether you’re a seasoned pro or just starting out in the
+            world of DJing.
+          </>
         )}
 
-      </div>
+{services === 1 && (
+          <>
+            <span className="firsword">Use </span>our space to record your next mix, practice your sets before a big gig, or even host a listening party for your friends.
 
+            <p className="instructortext">
+            <span className="firsword"> INSTRUCTOR</span> EXPLAINS TECHNICAL DETAILS AND HELPS YOU TO UNDERSTAND BASICS IN A VERY SHORT PERIOD OF TIME. SO IF YOU’RE NEW, WE RECOMMEND TO BOOK THE REPETITION ROOM WITH OUR INSTRUCTOR.
 
+            </p>
 
-      <motion.div className="text" variants={item}>
-        Don't miss out, take your DJing to the next level keep in minde
-        newSchool
-      </motion.div>
-
+          </>
+        )}
+      </motion.p>
       {services === 0 && (
         <div className="buttons">
-          <motion.button className="bookstudio" onClick={() => setServices(1)}>
-            <div>
-              <p>Rent a</p>
-              <p>studio</p>
-            </div>
-          </motion.button>
-
-          <motion.button
-            className="bookequipment"
-            onClick={() => setServices(2)}
+          <motion.div
+            initial={{ opacity: 0.5 }}
+            animate={{ opacity: 1, transform: "scale(1)" }}
+            transition={{ type: "spring" }}
           >
-            <div className="equipmenttext">
-              <p>Rent</p>
-              <p>equipment</p>
-            </div>
-          </motion.button>
+            <button
+              className="rentstudio blackbutton"
+              onClick={() => setServices(1)}
+            >
+              Rehearsal Studio
+            </button>
+          </motion.div>
+
+          <motion.div
+            className=""
+            initial={{ opacity: 0.5 }}
+            animate={{ opacity: 1, transform: "scale(1)" }}
+            transition={{ type: "spring" }}
+          >
+            <button
+              className="rentstudio pink-button"
+              onClick={() => setServices(2)}
+            >
+              Rent equipments
+            </button>
+          </motion.div>
         </div>
       )}
-
       {services === 1 && (
         <>
           <motion.button
@@ -86,11 +110,7 @@ export default function Services({ services, setServices }: any) {
           </motion.button>
         </>
       )}
-
-      {services === 2 && 
-              <Rent/>
-
-      }
+      {services === 2 && <Rent />}
     </motion.div>
   );
 }
