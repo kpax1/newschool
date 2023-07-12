@@ -1,6 +1,6 @@
 import { motion, Variants } from "framer-motion";
 
-import back from "/prev.png";
+import back from "/back.svg";
 import Rent from "./Rent";
 export const item: Variants = {
   hidden: { opacity: 0 },
